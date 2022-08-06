@@ -58,7 +58,7 @@ CFLAGS	:=	-g -w -O3 -mword-relocations -finline-limit=20000 \
 			-fno-rtti -fomit-frame-pointer -ffunction-sections -fpermissive \
 			$(ARCH)
 
-CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS -D__GNUC__ -DUSE_FILE32API -DLIBCTRU_1_0_0 -DLSB_FIRST -DARM_ARCH
+CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS -D__GNUC__ -DUSE_FILE32API -DLIBCTRU_1_0_0 -DLSB_FIRST -DARM_ARCH -DLANG_KOR
 
 CXXFLAGS	:= $(CFLAGS)  -fno-exceptions -std=gnu++11
 
@@ -186,7 +186,7 @@ endif
 #---------------------------------------------------------------------------------
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
-MAKEROM :=
+MAKEROM := ./makerom/windows_x86_64/makerom.exe
 ifeq ($(UNAME_S), Darwin)
 	ifeq ($(UNAME_M), x86_64)
 		MAKEROM := ./makerom/darwin_x86_64/makerom
